@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Your Name — AI & Software Engineering Student.">
+    <title>JAYA NISHAD | CSE Student</title>
+
+    <style>
+        /* ===================================================
+           COLOR & THEME SETTINGS
+        =================================================== */
+        :root {
+            --background: #ffffff;
+            --primary-text: #111111;
+            --secondary-text: #666666;
+            --border: #eeeeee;
+            --skill-bg: #f5f5f5;
+            --nav-height: 70px;
+        }
+
+        /* ===================================================
+           DESIGN ENGINE
+        =================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter",
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--primary-text);
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* ===================================================
+           NAVBAR
+        =================================================== */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -1.5px;
+            text-decoration: none;
+            color: var(--primary-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-text);
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-text);
+        }
+
+        /* ===================================================
+           HERO
+        =================================================== */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 0 80px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .profile-img {
+            width: 185px;
+            height: 190px;
+            border-radius: 20px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border);
+        }
+
+        .profile-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -4px;
+            line-height: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--secondary-text);
+            max-width: 500px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-links a {
+            color: var(--primary-text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid var(--primary-text);
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* ===================================================
+           CONTENT SECTIONS
+        =================================================== */
+        section {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--secondary-text);
+            padding-top: 5px;
+        }
+
+        .content-block {
+            margin-bottom: 48px;
+        }
+
+        .content-block:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .sub-heading {
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 8px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .date {
+            color: var(--secondary-text);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            display: block;
+            font-weight: 500;
+        }
+
+        p {
+            color: var(--secondary-text);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--secondary-text);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--primary-text);
+            font-weight: bold;
+        }
+
+        /* ===================================================
+           SKILLS
+        =================================================== */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 0;
+        }
+
+        .skills-grid li {
+            background: var(--skill-bg);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--primary-text);
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .skills-grid li::before {
+            content: "";
+            padding: 0;
+        }
+
+        .skills-grid li:hover {
+            border-color: #ddd;
+            transform: translateY(-2px);
+        }
+
+        /* ===================================================
+           FOOTER
+        =================================================== */
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 0;
+            color: var(--secondary-text);
+            font-size: 12px;
+            text-align: left;
+        }
+
+        footer p {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        /* ===================================================
+           MOBILE RESPONSIVE
+        =================================================== */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 16px;
+            }
+
+            .nav-container {
+                padding: 0 4px;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: left;
+                padding: 60px 0;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+                letter-spacing: -2px;
+            }
+
+            .tagline {
+                font-size: 1.05rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 20px;
+            }
+
+            section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 50px 0;
+            }
+
+            h2 {
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                height: 62px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a:nth-child(3) {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.35rem;
+            }
+
+            .contact-links {
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================================================
+         NAVIGATION
+    =================================================== -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">JAYA.</a>
+
+            <div class="nav-links">
+            <!--<a href="#experience">Experience</a> -->
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================================================
+         HERO SECTION
+    =================================================== -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>JAYA NISHAD</h1>
+
+            <p class="tagline">
+                 B.Tech CSE (AI & ML) Student | Developer | AI & ML Enthusiast
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:jayanishad2508@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/jaya-nishad-3454a1434" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/jayanishad2508" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.instagram.com/jaya2006_25/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+
+        <img
+           src="jaya.jpeg"
+            alt="Profile"
+            class="profile-img"
+        >
+    </header>
+
+    <!-- ===================================================
+         EXPERIENCE
+    =================================================== 
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="content-wrapper">
+            <div class="content-block">
+                <h3>Technical Lead</h3>
+                <div class="sub-heading">
+                    KIPM Innovators Foundation | Gorakhpur
+                </div>
+                <div class="date">Aug 2025 — Present</div>
+
+                <p>
+                    Leading the architecture of internal platforms and
+                    mentoring early-stage student founders.
+                </p>
+
+                <ul>
+                    <li>Designed core system architecture for regional innovation tracking.</li>
+                    <li>Developed automated certification systems for technical workshops.</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h3>Founder</h3>
+                <div class="sub-heading">AryCodes Platform</div>
+                <div class="date">March 2024 — Present</div>
+
+                <p>
+                    Building a high-end educational resource platform for
+                    modern web development.
+                </p>
+            </div>
+        </div>
+    </section>      -->
+
+    <!-- ===================================================
+         EDUCATION
+    =================================================== -->
+    <section id="education">
+        <h2>Education</h2>
+
+        <div class="content-wrapper">
+            <div class="content-block">
+                <h3>B.Tech in CS (AI & ML)</h3>
+                <div class="sub-heading">
+                    KIPM College of Engineering & Technology
+                </div>
+                <div class="date">2026 — Present</div>
+
+                <p>
+                    Specializing in Artificial Intelligence and
+                    performance engineering.
+                </p>
+                <h3>Class XII</h3>
+                <div class="sub-heading">
+                    CBSE
+                </div>
+                <div class="date">2025 — 2026</div>
+                <h3>Class X</h3>
+                <div class="sub-heading">
+                    CBSE
+                </div>
+                <div class="date">2023 — 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         PROJECTS
+    =================================================== -->
+    <section id="projects">
+        <h2>Projects / Experience</h2>
+
+        <div class="content-wrapper">
+            <div class="content-block">
+                <h3>SketchPro Master</h3>
+
+                <p>
+                    A web-based Business Management System designed to simplify daily business operations. It helps manage sales, expenses, inventory, customers, and provides a dashboard to track revenue, profit, and overall business performance.
+                </p>
+
+                <div class="contact-links" style="margin-top: 10px;">
+                    <a href="https://business-management-system-2d5v.onrender.com" target="_blank" rel="noopener noreferrer"
+                       style="font-size: 12px; border: none; font-weight: 700;">
+                        View Project →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         SKILLS
+    =================================================== -->
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="content-wrapper">
+            <ul class="skills-grid">
+                <li>Python</li>
+                <li>Microsoft Excel</li>
+                <li>Microsoft Word</li>
+                <li>Microsoft PowerPoint</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================================================
+         FOOTER
+    =================================================== -->
+    <footer>
+        <p>&copy; 2026 Jaya Nishad. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
